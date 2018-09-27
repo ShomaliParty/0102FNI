@@ -3,11 +3,23 @@ import java.util.HashSet;
 public class SubsetHashing {
 	
     /* Return true si Tab2 [] est un sous-ensemble de Tab1 [] */
-	static boolean isSubset(int Tab1[], int Tab2[], int m, int n)
+	//inspire par: https://www.geeksforgeeks.org/find-whether-an-array-is-subset-of-another-array-set-1/
+    
+    static boolean isSubsetHash(int tab1[], int tab2[], int m, int n)
     {
-        // compléter 
-        return true;
-    } 
+    	HashSet<Integer> hash_set = new HashSet<>();
+    	// mettre les valeurs tab1 dans hash_set
+    	for(int j = 0; j < m; j++) hash_set.add(tab1[j]);
+    	
+    	// Verifier si les valeurs de tab2 sont dans tab1
+    	for (int k = 0; k < n; k++)
+    	{
+    		if (hash_set.contains(tab2[k]));
+    		else return (false);
+    	}
+    	 return (true);
+    }
+     
  
     public static void main(String[] args) 
     { 
